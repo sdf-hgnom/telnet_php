@@ -1,11 +1,12 @@
 <?php
 
-use GuzzleHttp\Client;
+
 
 require 'd:/PHP_composer/vendor/autoload.php';
 require 'funcs.php';
 
-
+//use GuzzleHttp\Client;
+//use function GuzzleHttp\get_token;
 
 $name = getenv("VIDEO_USER");
 $yandex_map_api = getenv("YANDEX_MAP_API_KEY");

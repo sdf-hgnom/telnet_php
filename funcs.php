@@ -1,4 +1,6 @@
 <?php
+//namespace GuzzleHttp;
+//use GuzzleHttp;
 const AUTH_URL = 'https://cloud.ucams.ru/api/v0/auth';
 function get_token($name, $password)
 {
@@ -6,7 +8,7 @@ function get_token($name, $password)
     $name = getenv("VIDEO_USER");
     $password = getenv("VIDEO_PASSWORD");
     $option = array('username' => $name, 'password' => $password,);
-    $client = new \GuzzleHttp\Client();
+    $client = new GuzzleHttp\Client();
     $header = ['Accept' => 'application/json',];
     $response = $client->request('POST', AUTH_URL, ['json' => $option]);
     $body = $response->getBody()->getContents();
