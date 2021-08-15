@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_header {
+    text-align: center;
+}
+
+.map {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    border: 2px blue solid;
+}
+.container{
+    margin: 0 auto;
+    width: 1920px;
+    border: 2px red solid;
+}
+
+.foto {
+    margin: 0 auto;
+    display: block;
+    width: 400px;
+    height: 300px;
+}
+.form {
+    margin: 0 auto;
+}
