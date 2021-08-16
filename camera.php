@@ -47,7 +47,7 @@ echo "<hr>";
     <form class="form" action="" method="post">
         <label>
             Start data :
-            <input type="datetime-local" name="start_time" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4} [0-9]{2}:[0-9]{2}" placeholder="dd-mm-yyyy hh:mm">
+            <input type="text" name="start_time" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4} [0-9]{2}:[0-9]{2}" placeholder="dd-mm-yyyy hh:mm">
         </label>
 
         <br>
@@ -76,6 +76,7 @@ echo "<hr>";
         $res =  get_api('https://cloud.ucams.ru/api/v0/cameras/this/', $token, $body_dl);
         $token_d = $res['results'][0]['token_d'];
         $url_dl = "https://" . $server . "/" . $number ."/archive-" .$unix_datetime_start . "-300.mp4?token=" . $token_d;
+        $url_dl1 = "https://" . $server . "/" . $number ."/" .$number ."-" .$unix_datetime_start . "-300.mp4?token=" . $token_d;
 //        echo $date_time . "-->" .  $unix_datetime_start . "<br>";
 //        echo $token_d;
         $video_save = "upload/" . $number . "_" . $unix_datetime_start . "_300.mp4";
@@ -100,6 +101,7 @@ echo "<hr>";
 
 <!--    <video src="--><?php //echo $url_dl ?><!-- " controls="controls" preload="auto"> Просморт </video>-->
     <?php
+    sleep(5);
 
 
     ?>

@@ -55,7 +55,7 @@ function save_camera_foto($number,$server,$token){
 function check_datetime($x): bool
 {
 
-    return (date('d-m-Y G:i', strtotime($x)) == $x);
+    return (date('d-m-Y H:i', strtotime($x)) == $x);
 }
 
 /**

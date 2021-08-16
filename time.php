@@ -5,7 +5,8 @@ $t_s = '';
 if(isset($_POST['submit'])){
     echo "<span>Submitted!</span>";
     $t_s =$_POST['start_time'];
-    if (check_your_datetime($t_s)){
+    var_dump($t_s);
+    if (check_datetime($t_s)){
         echo 'Valid';
         $start_date = strtotime($t_s);
     } else {
@@ -17,7 +18,7 @@ if(isset($_POST['submit'])){
 }
 
 echo $start_date . '<br>';
-echo date('d-m-Y h:i',$start_date) .  '<hr>';
+echo date('d-m-Y H:i',$start_date) .  '<hr>';
 ?>
 
 <!doctype html>
@@ -35,7 +36,7 @@ echo date('d-m-Y h:i',$start_date) .  '<hr>';
 <form action="time.php" method="post">
     <label>
         Start data :
-        <input type="datetime" name="start_time" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4} [0-9]{2}:[0-9]{2}" placeholder="dd-mm-yyyy hh:mm">
+        <input type="datetime" name="start_time" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4} [0-9]{1,2}:[0-9]{1,2}" placeholder="dd-mm-yyyy hh:mm">
     </label>
 
     <br>
