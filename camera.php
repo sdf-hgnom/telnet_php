@@ -15,7 +15,7 @@ $number = $one['results'][0]['number'];
 $address = $one['results'][0]['address'];
 $title = $one['results'][0]['title'];
 $server = $one['results'][0]['server']['domain'];
-
+$video_live = "https://" . $server . "/" . $number ."/embed.html?autoplay=true&realtime=true&token=".$token_l;
 
 echo '<pre>';
 //var_dump($res);
@@ -54,6 +54,7 @@ echo "<hr>";
         <input type = "submit" name = "submit" value = "отправить">
         <button type="reset" name="reset"> Отчистить</button>
     </form>
+    <iframe style="width:200px; height:200px;"  src="<?php echo  $video_live;?>"></iframe>
     <?php
     $date_time = null;
     if (isset($_POST['submit'] ) and isset($_POST['start_time']) and ltrim($_POST['start_time']) != ''){
@@ -80,6 +81,7 @@ echo "<hr>";
 //        echo $date_time . "-->" .  $unix_datetime_start . "<br>";
 //        echo $token_d;
         $video_save = "upload/" . $number . "_" . $unix_datetime_start . "_300.mp4";
+
 /*
  *    save file
  */

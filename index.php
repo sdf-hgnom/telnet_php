@@ -26,7 +26,7 @@ $server_d = $one['results'][0]['server']['domain'];
 $server_s = $one['results'][0]['server']['screenshot_domain'];
 
 save_camera_foto($num,$server_s,$token_l);
-
+var_dump($token_l);
 ?>
 <!doctype html>
 <html lang="ru">
