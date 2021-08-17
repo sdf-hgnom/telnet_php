@@ -12,6 +12,8 @@ $name = getenv("VIDEO_USER");
 $yandex_map_api = getenv("YANDEX_MAP_API_KEY");
 $password = getenv("VIDEO_PASSWORD");
 $token = get_token($name, $password);
+var_dump($name);
+var_dump($password);
 
 $body = array('fields' => array(
     'number', 'token_l', 'address', 'server'),

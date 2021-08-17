@@ -1,5 +1,6 @@
 <?php
-require 'd:/PHP_composer/vendor/autoload.php';
+require_once 'c:\work\telnet_cams\vendor\autoload.php';
+//require 'd:/PHP_composer/vendor/autoload.php';
 require 'funcs.php';
 
 //namespace GuzzleHttp;
@@ -43,7 +44,9 @@ echo "<hr>";
 <div class="container">
     <a href="index.php">Назад</a>
     <h1 class="main_header"><?php echo $address . "( " . $title ." )";?></h1>
-    <img class="foto" src="<?php echo "images/" .$number . "~400.jpg";?>" alt="camera">
+<!--    <img class="foto" src="--><?php //echo "images/" .$number . "~400.jpg";?><!--" alt="camera">-->
+    <iframe style="width:400px; height:300px;display: block; margin: 0 auto"  src="<?php echo  $video_live;?>"></iframe>
+
     <form class="form" action="" method="post">
         <label>
             Start data :
@@ -54,7 +57,6 @@ echo "<hr>";
         <input type = "submit" name = "submit" value = "отправить">
         <button type="reset" name="reset"> Отчистить</button>
     </form>
-    <iframe style="width:200px; height:200px;"  src="<?php echo  $video_live;?>"></iframe>
     <?php
     $date_time = null;
     if (isset($_POST['submit'] ) and isset($_POST['start_time']) and ltrim($_POST['start_time']) != ''){
@@ -65,32 +67,35 @@ echo "<hr>";
         }
         $unix_datetime_start  = 0;
         $unix_datetime_start = strtotime($date_time);
+        $unix_datetime_correct = $unix_datetime_start - (8 *60*60);
+        var_dump($unix_datetime_start);
+        var_dump($date_time);
 
         $body_dl = array('fields' => array(
             'token_d',),
             'numbers' => [$number],
             'token_d_ttl' => 3600,
             'token_d_duration' => 300,
-            "token_d_start" => $unix_datetime_start,
+            "token_d_start" => $unix_datetime_correct,
         );
         var_dump($unix_datetime_start);
         $res =  get_api('https://cloud.ucams.ru/api/v0/cameras/this/', $token, $body_dl);
         $token_d = $res['results'][0]['token_d'];
-        $url_dl = "https://" . $server . "/" . $number ."/archive-" .$unix_datetime_start . "-300.mp4?token=" . $token_d;
-        $url_dl1 = "https://" . $server . "/" . $number ."/" .$number ."-" .$unix_datetime_start . "-300.mp4?token=" . $token_d;
+        $url_dl = "https://" . $server . "/" . $number ."/archive-" .$unix_datetime_correct . "-300.mp4?token=" . $token_d;
+        $url_dl1 = "https://" . $server . "/" . $number ."/" .$number ."-" .$unix_datetime_correct . "-300.mp4?token=" . $token_d;
 //        echo $date_time . "-->" .  $unix_datetime_start . "<br>";
 //        echo $token_d;
-        $video_save = "upload/" . $number . "_" . $unix_datetime_start . "_300.mp4";
+        $video_save = "upload/" . $number . "_" . $unix_datetime_correct . "_300.mp4";
 
 /*
  *    save file
  */
-        //        var_dump($url_dl);
-//        $handle_in = fopen($url_dl,"rb");
-//        $handle_out = fopen($video_save,"wb");
-//        $res_copy = stream_copy_to_stream($handle_in,$handle_out);
-//        fclose($handle_in);
-//        fclose($handle_out);
+//        var_dump($url_dl);
+        $handle_in = fopen($url_dl,"rb");
+        $handle_out = fopen($video_save,"wb");
+        $res_copy = stream_copy_to_stream($handle_in,$handle_out);
+        fclose($handle_in);
+        fclose($handle_out);
 //        var_dump($res_copy);
 
         echo "<hr>";

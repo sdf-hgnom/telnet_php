@@ -4,10 +4,11 @@ require_once 'c:\work\telnet_cams\vendor\autoload.php';
 //namespace GuzzleHttp;
 //use GuzzleHttp;
 const AUTH_URL = 'https://cloud.ucams.ru/api/v0/auth';
-function get_token($name, $password)
+function get_token()
 {
 
-    $name = getenv("VIDEO_USER");
+
+    $name = getenv("VIDEO_USERNAME");
     $password = getenv("VIDEO_PASSWORD");
     $option = array('username' => $name, 'password' => $password,);
     $client = new GuzzleHttp\Client();
