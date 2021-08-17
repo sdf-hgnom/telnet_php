@@ -1,4 +1,6 @@
 <?php
+require_once 'c:\work\telnet_cams\vendor\autoload.php';
+//require_once __DIR__ . '/composer/autoload_real.php';
 //namespace GuzzleHttp;
 //use GuzzleHttp;
 const AUTH_URL = 'https://cloud.ucams.ru/api/v0/auth';
