@@ -1,8 +1,7 @@
 <?php
 
 
-require_once 'c:\work\telnet_cams\vendor\autoload.php';
-//require 'd:/PHP_composer/vendor/autoload.php';
+require 'vendor/autoload.php';
 require 'funcs.php';
 
 //use GuzzleHttp\Client;

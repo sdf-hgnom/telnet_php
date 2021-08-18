@@ -1,5 +1,15 @@
 {
-    "require": {
-        "guzzlehttp/guzzle": "^7.3"
+  "name": "vendor_name/telnet",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "sdf",
+      "email": "email@example.com"
     }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^7.3"
+  }
 }

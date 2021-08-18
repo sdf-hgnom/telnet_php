@@ -1,4 +1,5 @@
 <?php
+require_once  'vendor/autoload.php';
 require 'funcs.php';
 
 $t_s = '';
@@ -36,7 +37,7 @@ echo date('d-m-Y H:i',$start_date) .  '<hr>';
 <form action="time.php" method="post">
     <label>
         Start data :
-        <input type="datetime" name="start_time" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4} [0-9]{1,2}:[0-9]{1,2}" placeholder="dd-mm-yyyy hh:mm">
+        <input type="datetime-local" name="start_time" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4} [0-9]{1,2}:[0-9]{1,2}" placeholder="dd-mm-yyyy hh:mm">
     </label>
 
     <br>
