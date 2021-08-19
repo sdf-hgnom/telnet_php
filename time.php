@@ -37,15 +37,7 @@ echo date('d-m-Y H:i',$start_date) .  '<hr>';
 <div class="container">
 <h1>TIME</h1>
 
-<form action="time.php" method="post">
-    <label>
-        Start data :
-        <input type="datetime-local" name="start_time" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4} [0-9]{1,2}:[0-9]{1,2}" placeholder="dd-mm-yyyy hh:mm">
-    </label>
 
-    <br>
-    <input type = "submit" name = "submit" value = "отправить">
-</form>
 </div>
 </body>
 <?php
