@@ -7,33 +7,41 @@ include "blocks/headers_no_map.php";
 ?>
 
 <?php
-$error_register = '';
+$error_register = [];
 if(isset($_POST['input_submit'])) {
     if (isset($_POST['input_name'])) {
         $input_name = trim($_POST['input_name']);
         if ($input_name == '' or strlen($input_name) < 4){
-            $error_register = 'Не введено или короткое имя !!';
+            $error_message = 'Не введено или короткое имя !!';
+            $error_register[] = $error_message;
             $_SESSION['error_registration'] = $error_register;
         }
     }
     if (isset($_POST['input_email'])) {
         $input_email = trim($_POST['input_email']);
-        if (!($input_email == '' and strpos($input_email,'@'))){
-            $error_register = 'Не корректное  или пустой email   !!';
+        $t = $input_email == '';
+        $p = strpos($input_email,'@') ==0;
+        var_dump($t);
+        var_dump($p);
+        if (($input_email == '' and strpos($input_email,'@'))){
+            $error_message = 'Не корректное  или пустой email   !!';
+            $error_register[] = $error_message;
             $_SESSION['error_registration'] = $error_register;
         }
     }
     if (isset($_POST['input_telephone'])){
         $input_telephone = trim($_POST['input_telephone']);
         if ($input_telephone == ''){
-            $error_register = 'Введен пустой пароль !!';
+            $error_message = 'Введен пустой телефон !!';
+            $error_register[] = $error_message;
             $_SESSION['error_registration'] = $error_register;
         }
     }
     if (isset($_POST['input_password'])) {
         $input_password = trim($_POST['input_password']);
         if ($input_password == '' ){
-            $error_register = 'Введен пустой пароль !!';
+            $error_message = 'Введен пустой пароль !!';
+            $error_register[] = $error_message;
             $_SESSION['error_registration'] = $error_register;
         }
     }
@@ -61,7 +69,7 @@ if(isset($_POST['input_submit'])) {
             <label for="FormControlPassword" class="form-label">Введите свой пароль : </label>
             <input type="password" autocomplete="on" class="form-control" name="input_password" id="FormControlPassword" >
             <label for="FormControlPassword2" class="form-label">Введите свой пароль повторно : </label>
-            <input type="password" autocomplete="on" class="form-control" name="input_password2" id="FormControlPassword2" av >
+            <input type="password" autocomplete="on" class="form-control" name="input_password2" id="FormControlPassword2"  >
             <input type = "submit" class="bnt btn-outline-primary" name = "input_submit" value = "отправить">
             <div class="form-control" >
 
@@ -75,3 +83,4 @@ if(isset($_POST['input_submit'])) {
 <?php
 include "blocks/footer.php";
 var_dump($_POST);
+print_r($_SESSION);
