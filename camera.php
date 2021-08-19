@@ -3,7 +3,7 @@ require_once  'vendor/autoload.php';
 require 'source/funcs.php';
 require 'source/all_need.php';
 $header_page = "One camera";
-include "blocks/headers.php";
+include "blocks/headers_no_map.php";
 ?>
 
 <?php

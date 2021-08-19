@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 require 'source/funcs.php';
 require 'source/all_need.php';
 $header_page = "Регистрация";
-include "blocks/headers.php";
+include "blocks/headers_no_map.php";
 ?>
 
 <?php
@@ -39,13 +39,12 @@ if(isset($_POST['input_submit'])) {
             $_SESSION['error_registration'] = $error_register;
         }
     }
-
+    echo '<hr>';
+    echo $input_name;
+    echo $input_email;
+    echo $input_telephone;
+    echo $input_password;
 }
-echo '<hr>';
-echo $input_name;
-echo $input_email;
-echo $input_telephone;
-echo $input_password;
 ?>
 <body>
 <div class="container">
@@ -59,10 +58,18 @@ echo $input_password;
             <label for="FormControlTelephone" class="form-label">Введите свой телефон : </label>
             <input type="tel" class="form-control" name="input_telephone" id="FormControlTelephone" placeholder="номер телефона">
             <label for="FormControlPassword" class="form-label">Введите свой пароль : </label>
-            <input type="password" class="form-control" name="input_password" id="FormControlPassword" >
+            <input type="password" autocomplete="on" class="form-control" name="input_password" id="FormControlPassword" >
             <label for="FormControlPassword2" class="form-label">Введите свой пароль повторно : </label>
-            <input type="password" class="form-control" name="input_password2" id="FormControlPassword2" >
+            <input type="password" autocomplete="on" class="form-control" name="input_password2" id="FormControlPassword2" av >
             <input type = "submit" class="bnt btn-outline-primary" name = "input_submit" value = "отправить">
+            <div class="form-control" >
+                <?php
+                var_dump($_SESSION);
+                echo $error_register;
+                unset($_SESSION['error_registration']);
+                ?>
+
+            </div>
         </form>
     </form>
 </div>
