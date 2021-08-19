@@ -13,9 +13,9 @@ function init(){
         controls: ['zoomControl', 'typeSelector',  'fullscreenControl', ]
     });
     var myPlacemark = new ymaps.Placemark([57.95297251920029, 102.7352961983922], {
-        balloonContent: '<a href="camera.php">\n' +
-            '    <img src="images/1627277293VCG202~400.jpg" />\n' +
-            '</a>',
+        balloonContent: `<a href="camera.php">
+    <img src="images/1627277293VCG202~400.jpg" alt="foto" />
+</a>`,
         iconContent: 'Мира - 21!!'
     }, {
         // Красная иконка, растягивающаяся под содержимое.

@@ -1,13 +1,18 @@
 <?php
-require_once 'c:\work\telnet_cams\vendor\autoload.php';
-//require 'd:/PHP_composer/vendor/autoload.php';
+require_once  'vendor/autoload.php';
 require 'funcs.php';
+require 'all_need.php';
+$header_page = "One camera";
+include "blocks/headers.php";
+?>
 
-//namespace GuzzleHttp;
-//use GuzzleHttp;
+<?php
+
 
 $name = getenv("VIDEO_USER");
 $password = getenv("VIDEO_PASSWORD");
+var_dump($name);
+var_dump($password);
 $token = get_token($name, $password);
 
 $one = get_this('1627277293VCG202',$token);
@@ -30,16 +35,7 @@ echo "<hr>";
 
 
 ?>
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>One camera</title>
-</head>
+<!---->
 <body>
 <div class="container">
     <a href="index.php">Назад</a>
@@ -118,3 +114,5 @@ echo "<hr>";
 </div>
 </body>
 </html>
+<?php
+include "blocks/footer.php";

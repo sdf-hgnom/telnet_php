@@ -5,11 +5,14 @@ function get_token()
 {
 
 
-    $name = getenv("VIDEO_USERNAME");
+    $name = getenv("VIDEO_USER");
     $password = getenv("VIDEO_PASSWORD");
     $option = array('username' => $name, 'password' => $password,);
-    $client = new GuzzleHttp\Client();
-    $header = ['Accept' => 'application/json',];
+//    echo '<pre>';
+//    print_r($option);
+//    echo '</pre>';
+    $headers = ['Accept' => 'application/json',];
+    $client = new GuzzleHttp\Client(['headers' => $headers]);
     $response = $client->request('POST', AUTH_URL, ['json' => $option]);
     $body = $response->getBody()->getContents();
     $result = json_decode($body, true);
@@ -29,14 +32,15 @@ function get_api($url, $token, $body)
     return json_decode($r_body, true);
 }
 
-function get_this($number,$token){
+function get_this($number, $token)
+{
     $headers = [
         'Content-Type' => 'application/json',
         'AccessToken' => $token,
         'Authorization' => 'Bearer ' . $token,
     ];
     $body = array('fields' => array(
-        'number', 'token_l', 'address', 'server','title'),
+        'number', 'token_l', 'address', 'server', 'title'),
         'numbers' => [$number],
     );
     $client = new GuzzleHttp\Client(['headers' => $headers]);
@@ -45,9 +49,11 @@ function get_this($number,$token){
     return json_decode($r_body, true);
 
 }
-function save_camera_foto($number,$server,$token){
-    $img_name = "images/" .$number . "~400.jpg";
-    $image_path = "https://" . $server ."/api/v0/screenshots/" .$number ."~400.jpg?token=" .$token;
+
+function save_camera_foto($number, $server, $token)
+{
+    $img_name = "images/" . $number . "~400.jpg";
+    $image_path = "https://" . $server . "/api/v0/screenshots/" . $number . "~400.jpg?token=" . $token;
     file_put_contents($img_name, file_get_contents($image_path));
 
 }

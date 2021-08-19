@@ -5,6 +5,8 @@ require 'all_need.php';
 $header_page = "First";
 include "blocks/headers.php";
 ?>
+
+
 <?php
 global $db_client;
 $t_s = '';
@@ -43,4 +45,5 @@ echo date('d-m-Y H:i',$start_date) .  '<hr>';
 </form>
 
 </body>
-</html>
+<?php
+include "blocks/footer.php";

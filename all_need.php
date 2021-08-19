@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 $db_name = 'test';
 $db_username = 'sdf';
 $db_password = '!exesoft12';
