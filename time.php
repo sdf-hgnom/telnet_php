@@ -10,13 +10,16 @@ include "blocks/headers.php";
 <?php
 global $db_client;
 $t_s = '';
+$start_date = null;
 if(isset($_POST['submit'])){
-    echo "<span>Submitted!</span>";
-    $t_s =$_POST['start_time'];
-    var_dump($t_s);
-    if (check_datetime($t_s)){
+    try {
+        $t_s = new DateTime($_POST['start_time']);
+    } catch (Exception $e) {
+    }
+
+    if (check_datetime($t_s->format("d-m-Y H:i"))){
         echo 'Valid';
-        $start_date = strtotime($t_s);
+        $start_date = $t_s->getTimestamp();
     } else {
         echo '<span>Введите корректеую дату-время</span>>';
 
@@ -25,13 +28,13 @@ if(isset($_POST['submit'])){
     echo "<span>Not Submitted!</span>";
 }
 
-echo $start_date . '<br>';
 echo date('d-m-Y H:i',$start_date) .  '<hr>';
 ?>
 <!--страница -->
 
 
 <body>
+<div class="container">
 <h1>TIME</h1>
 
 <form action="time.php" method="post">
@@ -43,7 +46,7 @@ echo date('d-m-Y H:i',$start_date) .  '<hr>';
     <br>
     <input type = "submit" name = "submit" value = "отправить">
 </form>
-
+</div>
 </body>
 <?php
 include "blocks/footer.php";
