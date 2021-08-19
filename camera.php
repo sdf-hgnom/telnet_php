@@ -1,7 +1,7 @@
 <?php
 require_once  'vendor/autoload.php';
-require 'funcs.php';
-require 'all_need.php';
+require 'source/funcs.php';
+require 'source/all_need.php';
 $header_page = "One camera";
 include "blocks/headers.php";
 ?>
@@ -40,7 +40,7 @@ echo "<hr>";
 <div class="container">
     <a href="index.php">Назад</a>
     <h1 class="main_header"><?php echo $address . "( " . $title ." )";?></h1>
-<!--    <img class="foto" src="--><?php //echo "images/" .$number . "~400.jpg";?><!--" alt="camera">-->
+<!--    <img class="foto" source="--><?php //echo "images/" .$number . "~400.jpg";?><!--" alt="camera">-->
     <iframe style="width:400px; height:300px;display: block; margin: 0 auto"  src="<?php echo  $video_live;?>"></iframe>
 
     <form class="form" action="" method="post">
@@ -102,7 +102,7 @@ echo "<hr>";
 
     ?>
 
-<!--    <video src="--><?php //echo $url_dl ?><!-- " controls="controls" preload="auto"> Просморт </video>-->
+<!--    <video source="--><?php //echo $url_dl ?><!-- " controls="controls" preload="auto"> Просморт </video>-->
     <?php
     sleep(5);
 

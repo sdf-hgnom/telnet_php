@@ -1,7 +1,7 @@
 <?php
 require_once  'vendor/autoload.php';
-require 'funcs.php';
-require 'all_need.php';
+require 'source/funcs.php';
+require 'source/all_need.php';
 $header_page = "First";
 include "blocks/headers.php";
 ?>
