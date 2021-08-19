@@ -1,7 +1,9 @@
 <?php
 require_once  'vendor/autoload.php';
 require 'funcs.php';
+require 'all_need.php';
 
+global $db_client;
 $t_s = '';
 if(isset($_POST['submit'])){
     echo "<span>Submitted!</span>";

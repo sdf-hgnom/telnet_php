@@ -1,5 +1,5 @@
 <?php
-
+$check = session_start();
 
 require 'vendor/autoload.php';
 require 'funcs.php';
