@@ -2,7 +2,10 @@
 require_once  'vendor/autoload.php';
 require 'funcs.php';
 require 'all_need.php';
-
+$header_page = "First";
+include "blocks/headers.php";
+?>
+<?php
 global $db_client;
 $t_s = '';
 if(isset($_POST['submit'])){
@@ -23,16 +26,9 @@ if(isset($_POST['submit'])){
 echo $start_date . '<br>';
 echo date('d-m-Y H:i',$start_date) .  '<hr>';
 ?>
+<!--страница -->
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>time</title>
-</head>
+
 <body>
 <h1>TIME</h1>
 
