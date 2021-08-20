@@ -1,3 +1,4 @@
+<!--скрипт регистрации-->
 <?php
 require 'all_need.php';
 global $db_client;

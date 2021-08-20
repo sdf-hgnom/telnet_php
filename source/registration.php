@@ -18,7 +18,8 @@ include "../blocks/headers_no_map.php";
             <input type="password" autocomplete="on" class="form-control" name="input_password" id="FormControlPassword" >
             <label for="FormControlPassword2" class="form-label">Введите свой пароль повторно : </label>
             <input type="password" autocomplete="on" class="form-control" name="input_password2" id="FormControlPassword2"  >
-            <input type = "submit" class="bnt btn-outline-primary" name = "input_submit" value = "отправить">
+            <input type = "submit" class="bnt btn-outline-primary" name = "input_submit" value = "Регимтрироваит">
+            <a href="signin.php">Отменить</a>
             <div class="form-control">
                 <?php
                 if (isset($_SESSION['message'])) {
@@ -27,6 +28,7 @@ include "../blocks/headers_no_map.php";
                 }
                 unset($_SESSION['message']);
                 ?>
+                <a href="registration.php"></a>
 
             </div>
         </form>
