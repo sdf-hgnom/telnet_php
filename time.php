@@ -42,3 +42,4 @@ echo date('d-m-Y H:i',$start_date) .  '<hr>';
 </body>
 <?php
 include "blocks/footer.php";
+echo $_SERVER['DOCUMENT_ROOT'];
