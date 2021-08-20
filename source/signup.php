@@ -1,6 +1,6 @@
 <?php
 require 'all_need.php';
-
+global $db_client;
 $input_name = null;
 $input_email= null;
 $input_telephone= null;
@@ -58,6 +58,15 @@ if(isset($_POST['input_submit'])){
     echo $input_telephone . '<br>';
     echo $input_password . '<br>';
     echo $input_password2 . '<br>';
+    $hash = password_hash($input_password, PASSWORD_DEFAULT);
+
+    if (mysqli_query($db_client, "INSERT INTO `users` (`name`, `email`,  `password`,`telephone` ) VALUES ( '$input_name','$input_email', '$hash', '$input_telephone')")){
+        echo 'OK !!';
+    }else {
+        echo mysqli_error($db_client);
+    }
+
+
 
 }
 
