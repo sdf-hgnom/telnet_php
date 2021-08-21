@@ -36,7 +36,7 @@ save_camera_foto($num,$server_s,$token_l);
 <hr>
 <!--    карта -->
 
-</body>
+
 <?php
 include "blocks/footer.php";
 
