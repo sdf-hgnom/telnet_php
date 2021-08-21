@@ -39,7 +39,8 @@ echo date('d-m-Y H:i',$start_date) .  '<hr>';
 
 
 </div>
-</body>
+<script type="text/javascript" src="cameras.js"></script>
+<script type="text/javascript" src="test.js"></script>
 <?php
 include "blocks/footer.php";
 echo $_SERVER['DOCUMENT_ROOT'];

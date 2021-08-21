@@ -12,11 +12,12 @@ function init(){
         zoom: 15,
         controls: ['zoomControl', 'typeSelector',  'fullscreenControl', ]
     });
-    var myPlacemark = new ymaps.Placemark([57.95297251920029, 102.7352961983922], {
-        balloonContent: `<a href="camera.php">
-    <img src="images/1627277293VCG202~400.jpg" alt="foto" />
-</a>`,
-        iconContent: 'Мира - 21!!'
+    var image_source =`<a href="camera.php"> <img src="images/${cameras[0].number}~400.jpg" alt="foto" /></a>>`
+        'images/' +cameras[0].number + '~400.jpg';
+    alert(image_source);
+    var myPlacemark = new ymaps.Placemark([cameras[0].longitude,cameras[0].latitude], {
+        balloonContent: image_source,
+        iconContent: cameras[0].address
     }, {
         // Красная иконка, растягивающаяся под содержимое.
         preset: "islands#yellowStretchyIcon"
@@ -24,3 +25,6 @@ function init(){
     myMap.geoObjects.add(myPlacemark);
 }
 
+// `<a href="camera.php">
+//     <img src="image_source" alt="foto" />
+// </a>`,

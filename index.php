@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 require 'source/funcs.php';
 require 'source/all_need.php';
 $header_page = "Main";
-include "blocks/headers.php";
+include "headers.php";
 ?>
 
 <?php

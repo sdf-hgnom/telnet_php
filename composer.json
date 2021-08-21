@@ -11,6 +11,7 @@
   ],
   "require": {
     "guzzlehttp/guzzle": "^7.3",
-    "ext-mysqli": "*"
+    "ext-mysqli": "*",
+    "ext-json": "*"
   }
 }
