@@ -4,5 +4,3 @@ let cameras=[{
   "latitude":"102.7352961983922",
   "address":"Мира - 21"
 }];
-
-
