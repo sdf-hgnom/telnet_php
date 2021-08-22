@@ -39,4 +39,6 @@ save_camera_foto($num,$server_s,$token_l);
 
 <?php
 include "blocks/footer.php";
+echo '<script> sessionStorage.getItem("numbers");</script>';
+print_r($_SESSION['numbers']);
 
