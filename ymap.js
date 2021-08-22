@@ -12,17 +12,23 @@ function init(){
         zoom: 15,
         controls: ['zoomControl', 'typeSelector',  'fullscreenControl', ]
     });
-    var image_source =`<a href="camera.php"> <img src="images/${cameras[0].number}~400.jpg" alt="foto" /></a>>`
-        'images/' +cameras[0].number + '~400.jpg';
-    alert(image_source);
-    var myPlacemark = new ymaps.Placemark([cameras[0].longitude,cameras[0].latitude], {
-        balloonContent: image_source,
-        iconContent: cameras[0].address
-    }, {
-        // Красная иконка, растягивающаяся под содержимое.
-        preset: "islands#yellowStretchyIcon"
-    });
-    myMap.geoObjects.add(myPlacemark);
+    var map_array = [] ;
+    var image_source = '';
+    for ( let i = 0;i < cameras.length;i++){
+        image_source = `<a href="camera.php"> <img src="images/${cameras[i].number}~400.jpg" alt="foto" /></a>>`
+        'images/' +cameras[i].number + '~400.jpg';
+        var myPlacemark = new ymaps.Placemark([cameras[i].longitude,cameras[i].latitude], {
+            balloonContent: image_source,
+            iconContent: cameras[i].address
+        }, {
+            // Красная иконка, растягивающаяся под содержимое.
+            preset: "islands#yellowStretchyIcon"
+        });
+        myMap.geoObjects.add(myPlacemark);
+
+    }
+
+    myMap.geoObjects.add(map_array);
 }
 
 // `<a href="camera.php">
