@@ -1,6 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 const AUTH_URL = 'https://cloud.ucams.ru/api/v0/auth';
+
 function get_token()
 {
 

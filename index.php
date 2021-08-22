@@ -3,19 +3,33 @@
 require 'vendor/autoload.php';
 require 'source/funcs.php';
 require 'source/all_need.php';
+require 'config.php';
 $header_page = "Main";
 include "headers.php";
 ?>
 
 <?php
-
+global $all_cameras;
+var_dump($all_cameras);
 $token = get_token();
 
-$body = array('fields' => array(
-    'number', 'token_l', 'address', 'server'),
-    'numbers' => ['1627277293VCG202'],
+foreach ($all_cameras as $item){
+    $body = array('fields' => array(
+        'number', 'token_l', 'address', 'server'),
+        'numbers' => [$item],
 );
-$one = get_api('https://cloud.ucams.ru/api/v0/cameras/this/', $token, $body);
+    $one = get_api('https://cloud.ucams.ru/api/v0/cameras/this/', $token, $body);
+    $token_l = $one['results'][0]['token_l'];
+    $server_s = $one['results'][0]['server']['screenshot_domain'];
+    save_camera_foto($item,$server_s,$token_l);
+}
+
+//$body = array('fields' => array(
+//    'number', 'token_l', 'address', 'server'),
+//    'numbers' => [$all_cameras[]],
+////);
+//$one = get_api('https://cloud.ucams.ru/api/v0/cameras/this/', $token, $body);
+var_dump($one);
 $num = $one['results'][0]['number'];
 $token_l = $one['results'][0]['token_l'];
 $address = $one['results'][0]['address'];
@@ -39,6 +53,4 @@ save_camera_foto($num,$server_s,$token_l);
 
 <?php
 include "blocks/footer.php";
-echo '<script> sessionStorage.getItem("numbers");</script>';
-print_r($_SESSION['numbers']);
 

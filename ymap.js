@@ -15,8 +15,9 @@ function init(){
     var map_array = [] ;
     var image_source = '';
     for ( let i = 0;i < cameras.length;i++){
-        image_source = `<a href="camera.php"> <img src="images/${cameras[i].number}~400.jpg" alt="foto" /></a>>`
+        image_source = `<a href="camera.php?number=${cameras[i].number}"> <img src="images/${cameras[i].number}~400.jpg" alt="foto" /></a>`
         'images/' +cameras[i].number + '~400.jpg';
+        alert(image_source)
         var myPlacemark = new ymaps.Placemark([cameras[i].longitude,cameras[i].latitude], {
             balloonContent: image_source,
             iconContent: cameras[i].address

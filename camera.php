@@ -7,15 +7,12 @@ include "blocks/headers_no_map.php";
 ?>
 
 <?php
-
-
+$current_number = $_REQUEST['number'];
 $name = getenv("VIDEO_USER");
 $password = getenv("VIDEO_PASSWORD");
-var_dump($name);
-var_dump($password);
 $token = get_token($name, $password);
 
-$one = get_this('1627277293VCG202',$token);
+$one = get_this($current_number,$token);
 $token_l = $one['results'][0]['token_l'];
 $number = $one['results'][0]['number'];
 $address = $one['results'][0]['address'];
@@ -110,7 +107,7 @@ echo "<hr>";
     ?>
 
 
-    <a href="<?php echo $url_dl; ?>"> Save</a>
+<!--    <a href="--><?php //echo $url_dl; ?><!--"> Save</a>-->
 </div>
 </body>
 </html>
