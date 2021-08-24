@@ -28,7 +28,7 @@ function init() {
                 balloonContent: `<a href="camera.php?number=${data.number}"> <img src="images/${data.number}~400.jpg" alt="foto" /></a>`
             },{
                 // Красная иконка, растягивающаяся под содержимое.
-                preset: "islands#redStretchyIcon"
+                preset: "islands#redVideoIcon"
             });
             myMap.geoObjects.add(myPlacemark);
         }

@@ -17,7 +17,7 @@ include "blocks/headers_no_map.php";
 <!--    <input id="id_text" type="text" name="param" value="">-->
 <!--    <input id="id_submit" type="submit">-->
 <!--</form>-->
-
+</body>
 <?php
 include "blocks/footer.php";
 
