@@ -45,7 +45,6 @@ include "../blocks/headers_no_map.php";
         </div>
     </div>
 
-    </body>
 <?php
 include "../blocks/footer.php";
 print_r($_SESSION);

@@ -20,7 +20,6 @@ include "../blocks/headers_no_map.php";
                 </form>
             </div>
         </div>
-    </body>
 <?php
 include "../blocks/footer.php";
 if (isset($_POST['input_submit'])) {

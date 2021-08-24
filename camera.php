@@ -110,6 +110,5 @@ echo "<hr>";
 <!--    <a href="--><?php //echo $url_dl; ?><!--"> Save</a>-->
 </div>
 </body>
-</html>
 <?php
 include "blocks/footer.php";

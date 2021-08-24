@@ -7,9 +7,6 @@ require 'config.php';
 $header_page = "Main";
 include "blocks/headers_no_map.php";
 //const CAMERA_CVS = 'E:\work\prog\php\telnet\camera.cvs';
-const CAMERA_CVS = '/camera.cvs';
-global $all_cameras;
-var_dump($all_cameras);
 
 
 ?>
@@ -20,7 +17,6 @@ var_dump($all_cameras);
 <!--    <input id="id_text" type="text" name="param" value="">-->
 <!--    <input id="id_submit" type="submit">-->
 <!--</form>-->
-</body>
 
 <?php
 include "blocks/footer.php";

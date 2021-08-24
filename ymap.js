@@ -1,37 +1,39 @@
 ymaps.ready(init);
-function init(){
+
+function init() {
+    // var camerasCollection = new yamap.GeoObjectCollection(null,{preset: 'islands#yellowStretchyIcon'});
     // Создание карты.
+
     var myMap = new ymaps.Map("map", {
         // Координаты центра карты.
         // Порядок по умолчанию: «широта, долгота».
         // Чтобы не определять координаты центра карты вручную,
         // воспользуйтесь инструментом Определение координат.
-        center: [57.949293, 102.737533],
+        center: [57.95297251920029, 102.7352961983922],
         // Уровень масштабирования. Допустимые значения:
         // от 0 (весь мир) до 19.
         zoom: 15,
-        controls: ['zoomControl', 'typeSelector',  'fullscreenControl', ]
+        controls: []
     });
-    var map_array = [] ;
-    var image_source = '';
-    for ( let i = 0;i < cameras.length;i++){
-        image_source = `<a href="camera.php?number=${cameras[i].number}"> <img src="images/${cameras[i].number}~400.jpg" alt="foto" /></a>`
-        'images/' +cameras[i].number + '~400.jpg';
-        alert(image_source)
-        var myPlacemark = new ymaps.Placemark([cameras[i].longitude,cameras[i].latitude], {
-            balloonContent: image_source,
-            iconContent: cameras[i].address
-        }, {
-            // Красная иконка, растягивающаяся под содержимое.
-            preset: "islands#yellowStretchyIcon"
-        });
-        myMap.geoObjects.add(myPlacemark);
 
-    }
+    // var camerasCollection = new ymaps.GeoObjectCollection(null, {preset: 'islands#yellowStretchyIcon'});
+    for (let i = 0;i<cameras.length;i++){
+        addPlacemark(cameras[i]);
 
-    myMap.geoObjects.add(map_array);
-}
+        // var image_source = `<!--<a href="camera.php?number=${cameras[i].number}"> <img src="images/${cameras[i].number}~400.jpg" alt="foto" /></a>-->`
 
-// `<a href="camera.php">
-//     <img src="image_source" alt="foto" />
-// </a>`,
+        function addPlacemark(data) {
+            var myPlacemark = new ymaps.Placemark([data.longitude,data.latitude], {
+                hintContent: data.address,
+                balloonContent: `<a href="camera.php?number=${data.number}"> <img src="images/${data.number}~400.jpg" alt="foto" /></a>`
+            },{
+                // Красная иконка, растягивающаяся под содержимое.
+                preset: "islands#redStretchyIcon"
+            });
+            myMap.geoObjects.add(myPlacemark);
+        }
+
+    }}
+
+
+
