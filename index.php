@@ -28,23 +28,25 @@ foreach ($all_cameras as $item){
 }
 
 
-//var_dump($one);
-//$num = $one['results'][0]['number'];
-//$token_l = $one['results'][0]['token_l'];
-//$address = $one['results'][0]['address'];
-//$server_d = $one['results'][0]['server']['domain'];
-//$server_s = $one['results'][0]['server']['screenshot_domain'];
-
-//save_camera_foto($num,$server_s,$token_l);
 
 ?>
 
 <body>
-<h1 class="main_header"> Камеры Усть-Илимска </h1>
+<header class="main_header">
+    <a href="#"> <img src="images/telnet_logo.png" alt="logo_telnet"> </a>
+    <h1 class="page_header"> Камеры Усть-Илимска </h1>
+    <a href="source/signout.php"> Выйти  </a>
+
+</header>
+<aside>
+
+</aside>
+
 <div class="container">
     <div id="map" class="my_map">
 
     </div>
+
 
 </div>
 <hr>

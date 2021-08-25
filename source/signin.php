@@ -1,3 +1,5 @@
+<!--signin.php-->
+<!--форма входа-->
 <?php
 require 'all_need.php';
 global $db_client;

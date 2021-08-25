@@ -1,6 +1,10 @@
 
 .main_header {
+    display: flex;
     text-align: center;
+    justify-content: space-between;
+    background: #F8F8F8FF;
+    border: 2px solid red;
 }
 
 .my_map {
@@ -28,4 +32,7 @@
     max-height: 300px;
     border: 2px solid red;
     margin: 0 auto;
+}
+.page_header{
+    display: block;
 }
