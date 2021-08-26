@@ -41,20 +41,21 @@ foreach ($all_cameras as $item){
 </header>
 <div class="container">
     <div class="context">
-    <aside class="aside c-6">
-        <?php
-        echo "<ul class='aside-'>";
-        for ($i = 0;$i<count($all_cameras);$i++){
-
-            echo "<li>$all_cameras[$i]</li>";
-        }
-        echo "</ul>"
-        ?>
         <div id="map" class="my_map">
-
         </div>
+        <aside class="aside">
+            <ul class="aside-ul">
 
-    </aside>
+                <?php
+                for ($i = 0;$i<count($all_cameras);$i++){
+                    $link = "<li class='aside-link'> <a href='camera.php?camera=$all_cameras[$i]'" . "'><img src='images/$all_cameras[$i]~400.jpg' alt='foto'". "'></a></li>";
+                    echo $link;
+                }
+
+                ?>
+            </ul>
+        </aside>
+<!--    -->
 
 
 

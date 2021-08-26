@@ -25,7 +25,7 @@ function init() {
         function addPlacemark(data) {
             var myPlacemark = new ymaps.Placemark([data.longitude,data.latitude], {
                 hintContent: data.address,
-                balloonContent: `<a href="camera.php?number=${data.number}"> <img src="images/${data.number}~400.jpg" alt="foto" /></a>`
+                balloonContent: `<a href="camera.php?camera=${data.number}"> <img src="images/${data.number}~400.jpg" alt="foto" /></a>`
             },{
                 // Красная иконка, растягивающаяся под содержимое.
                 preset: "islands#redVideoIcon"
