@@ -20,19 +20,21 @@ global $all_cameras;
         <div class="context">
             <div id="map" class="my_map">
             </div>
-            <ul class="aside c-6">
+            <aside class="aside">
+                <ul class="aside-ul">
 
                 <?php
                 for ($i = 0;$i<count($all_cameras);$i++){
 //                    $foto = '<img src="images\/">' . $all_cameras[$i] ;
-                    $link = "<a href='camera.php?camera=$all_cameras[$i]'" . "'><img src='images/$all_cameras[$i]~400.jpg'". "'></a>";
+                    $link = "<li class='aside-link'> <a href='camera.php?camera=$all_cameras[$i]'" . "'><img src='images/$all_cameras[$i]~400.jpg' alt='foto'". "'></a></li>";
                     echo $link;
                 }
 
                 ?>
-            </ul>
-<!--                end aside-->
+                </ul>
             </aside>
+
+<!--                end aside-->
 
 
 
