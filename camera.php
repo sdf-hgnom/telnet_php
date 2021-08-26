@@ -7,7 +7,9 @@ include "blocks/headers_no_map.php";
 ?>
 
 <?php
-$current_number = $_REQUEST['number'];
+var_dump($_REQUEST);
+var_dump($_GET);
+$current_number = $_REQUEST['camera'];
 $name = getenv("VIDEO_USER");
 $password = getenv("VIDEO_PASSWORD");
 $token = get_token($name, $password);

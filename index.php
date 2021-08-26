@@ -10,6 +10,7 @@ include "headers.php";
 
 <?php
 global $yandex_map_api;
+global $all_cameras;
 $yandex_map_api = getenv("YANDEX_MAP_API_KEY");
 //echo $yandex_map_api;
 global $all_cameras;
@@ -38,20 +39,36 @@ foreach ($all_cameras as $item){
     <a href="source/signout.php"> Выйти  </a>
 
 </header>
-<aside>
-
-</aside>
-
 <div class="container">
-    <div id="map" class="my_map">
+    <div class="context">
+    <aside class="aside c-6">
+        <?php
+        echo "<ul class='aside-'>";
+        for ($i = 0;$i<count($all_cameras);$i++){
 
-    </div>
+            echo "<li>$all_cameras[$i]</li>";
+        }
+        echo "</ul>"
+        ?>
+        <div id="map" class="my_map">
+
+        </div>
+
+    </aside>
+
+
 
 
 </div>
+</div>
 <hr>
 <!--    карта -->
+<footer class="footer">
+    <p>
+        Copyright&copy;
+    </p>
 
+</footer>
 </body>
 <?php
 include "blocks/footer.php";

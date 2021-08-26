@@ -36,3 +36,20 @@
 .page_header{
     display: block;
 }
+.aside{
+    margin-bottom: 5px;
+
+    background: lightgreen;
+}
+.aside-ul {
+    list-style: none;
+}
+.aside-link{
+    margin-bottom: 10px;
+}
+.context {
+    display: flex;
+}
+.footer{
+    background: #F8F8F8FF;
+}
