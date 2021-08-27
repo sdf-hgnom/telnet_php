@@ -53,3 +53,7 @@
 .footer{
     background: #F8F8F8FF;
 }
+.my-right {
+    display: flex;
+    justify-content: flex-end;
+}

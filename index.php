@@ -33,11 +33,23 @@ foreach ($all_cameras as $item){
 ?>
 
 <body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Название сайта</a>
+        </div>
 <header class="main_header">
+    <nav class="navbar navbar-default " role="navigation">
     <a href="#"> <img src="images/telnet_logo.png" alt="logo_telnet"> </a>
     <h1 class="page_header"> Камеры Усть-Илимска </h1>
     <a class="btn btn-link" href="source/signout.php"> Выйти  </a>
-
+    </nav>
 </header>
 <div class="container-fluid">
     <div class="context">
