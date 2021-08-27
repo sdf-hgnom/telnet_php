@@ -36,10 +36,10 @@ foreach ($all_cameras as $item){
 <header class="main_header">
     <a href="#"> <img src="images/telnet_logo.png" alt="logo_telnet"> </a>
     <h1 class="page_header"> Камеры Усть-Илимска </h1>
-    <a href="source/signout.php"> Выйти  </a>
+    <a class="btn btn-link" href="source/signout.php"> Выйти  </a>
 
 </header>
-<div class="container">
+<div class="container-fluid">
     <div class="context">
         <div id="map" class="my_map">
         </div>
