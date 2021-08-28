@@ -53,7 +53,37 @@
 .footer{
     background: #F8F8F8FF;
 }
-.my-right {
-    display: flex;
-    justify-content: flex-end;
+
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .my_map {
+        max-width: 800px;
+        max-height: 600px;
+        margin: 0 auto;
+        border: 2px green solid;
+    }
+    .main_header{
+        font-size: 1rem !important;
+    }
+
+
+
+
 }
+@media screen and (min-width: 320px) and (max-width: 480px){
+    .my_map {
+        max-width: 320px;
+        max-height: 200px;
+        /*max-width: 600px;*/
+        /*max-height: 600px;*/
+        margin: 0 auto;
+        border: 2px red solid;
+    }
+    .main_header{
+        font-size: 1rem !important;
+    }
+
+
+
+
+    }
