@@ -37,6 +37,7 @@ include "blocks/headers_no_map.php";
 <?php
 $tt = random_string(5);
 var_dump($tt);
+var_dump($_SESSION);
 ?>
 
 <?php

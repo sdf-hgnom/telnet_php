@@ -33,29 +33,24 @@ foreach ($all_cameras as $item){
 ?>
 
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Название сайта</a>
-        </div>
-<header class="main_header">
-    <nav class="navbar navbar-default " role="navigation">
-    <a href="#"> <img src="images/telnet_logo.png" alt="logo_telnet"> </a>
-    <h1 class="page_header"> Камеры Усть-Илимска </h1>
-    <a class="btn btn-link" href="source/signout.php"> Выйти  </a>
-    </nav>
+        <a class="navbar-brand" href="#" > <img class="foto" src="images/telnet_logo.png" alt="foto"></a>
+        <h1 class="page_header"> Камеры Усть-Илимска </h1>
+        <a href="source/signout.php"> Выйти  </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="aside" aria-controls="aside" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </div>
+</nav>
 </header>
 <div class="container-fluid">
-    <div class="context">
-        <div id="map" class="my_map">
+    <div class="row position-relative">
+        <div id="map" class="my_map col-12">
         </div>
-        <aside class="aside">
+        <aside class="aside position-absolute">
             <ul class="aside-ul">
 
                 <?php

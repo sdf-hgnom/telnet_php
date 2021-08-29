@@ -13,7 +13,7 @@ function init() {
         // Уровень масштабирования. Допустимые значения:
         // от 0 (весь мир) до 19.
         zoom: 15,
-        controls: []
+        controls: ["fullscreenControl"]
     });
 
     // var camerasCollection = new ymaps.GeoObjectCollection(null, {preset: 'islands#yellowStretchyIcon'});
