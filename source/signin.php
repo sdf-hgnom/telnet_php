@@ -4,42 +4,15 @@
 require 'all_need.php';
 global $db_client;
 $header_page = "Вход";
-include "../blocks/headers_no_map.php";
-?>
-    <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="text-center">
-                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-                <form class="form text-center" action="">
-                    <div class="form-label-group">
-                    <label for="inputEmail" class="visually-hidden">Email address</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                    </div>
-                    <div class="form-label-group">
-                    <label for="inputPassword" class="visually-hidden">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                    </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-                </form>
-                </div>
-<!--                <form class="form-control" action="#" method="post">-->
-<!--                    <label for="FormControlName" class="form-label ">Введите свое имя :</label>-->
-<!--                    <input id="FormControlName" type="text" class="form-control" name="input_name"-->
-<!--                           placeholder="Введите свое имя">-->
-<!--                    <label for="FormControlPassword" class="form-label ">Введите свой пароль :</label>-->
-<!--                    <input id="FormControlPassword" type="password" class="form-control" name="input_password"-->
-<!--                           placeholder="Введите свой пароль">-->
-<!--                    <input type="submit" class="bnt btn-outline-primary" name="input_submit" value="отправить">-->
-<!--                </form>-->
-<!--            </div>-->
-        </div>
-<?php
-include "../blocks/footer.php";
+//unset($_SESSION['message_no_user']);
+//unset($_SESSION['message']);
+$location_error = "sign_in_form.php";
+$location_ok = "../index_1.php";
 if (isset($_POST['input_submit'])) {
     $input_name = $_POST['input_name'];
     $input_password = $_POST['input_password'];
+    var_dump($input_name);
+    var_dump($input_password);
     $check_user = mysqli_query($db_client, "SELECT * FROM `users` WHERE `name` = '$input_name'");
     if (!$check_user) {
         echo mysqli_error($db_client);
@@ -55,15 +28,23 @@ if (isset($_POST['input_submit'])) {
                 'status' => $user['status'],
                 'telephone' => $user['telephone'],
             ];
-            var_dump($_SESSION);
 
         } else {
-            echo "Error password !!";
+            $_SESSION['message'] = 'Введенный пароль не верен !!';
+            header('Location:' . $location_error);
         }
 
 
     } else {
-        echo 'Нет такого пользователя !! -- Зарегистрируйтусь !!';
-        echo '<a href="registration.php">Зарегистрируйтусь !!</a>';
+        $_SESSION['message_no_user'] = "Нету пользователя $input_name Зарегистрируйтесь !!";
+        header("Location:" .$location_error);
+
     }
 }
+if ($_SESSION['user']){
+    unset($_SESSION['message_no_user']);
+    unset($_SESSION['message']);
+    header("Location:" .$location_ok);
+};
+
+

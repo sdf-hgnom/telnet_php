@@ -13,3 +13,4 @@ if(!$db_client){
 }
 global $all_cameras;
 global $db_client;
+print_r($_SESSION);
