@@ -20,8 +20,8 @@ print_r($_SESSION)
         echo $header_page ?></title>
 </head>
 <body>
-<div class="container">
-    <div class="row">
+<div class="container-fluid d-flex h-100 justify-content-center align-items-center p-0">
+    <div class="row  bg-white shadow-sm">
         <div class="col-12">
             <div class="text-center">
                 <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
