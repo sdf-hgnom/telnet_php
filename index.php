@@ -42,32 +42,14 @@ foreach ($all_cameras as $item){
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="aside" aria-controls="aside" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
     </div>
 </nav>
 </header>
 <div class="container-fluid">
-    <div class="row position-relative">
+    <div class="row">
         <div id="map" class="my_map col-12">
         </div>
         <aside class="aside position-absolute">
-            <ul class="aside-ul">
-
-                <?php
-                for ($i = 0;$i<count($all_cameras);$i++){
-                    $link = "<li class='aside-link'> <a href='camera.php?camera=$all_cameras[$i]'" . "'><img src='images/$all_cameras[$i]~400.jpg' alt='foto'". "'></a></li>";
-                    echo $link;
-                }
-
-                ?>
-            </ul>
-        </aside>
-<!--    -->
-
-
-
-
-</div>
 </div>
 <hr>
 <!--    карта -->

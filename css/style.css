@@ -17,10 +17,17 @@
 }
 
 .foto {
-    margin: 0 auto;
-    display: block;
-    max-width: 400px;
-    max-height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    max-height: 200px;
+}
+.foto img {
+    min-width: 100%;
+    min-height: 100%;
+    flex-shrink: 0;
 }
 .form {
     max-width: 350px;
@@ -78,6 +85,14 @@
         /*max-height: 600px;*/
         margin: 0 auto;
         border: 2px red solid;
+    }
+    .foto {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 200px;
+        max-height: 250px;
     }
     .main_header{
         font-size: 1rem !important;
