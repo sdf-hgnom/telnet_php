@@ -10,17 +10,30 @@ include "../blocks/headers_no_map.php";
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Вход</h1>
-                <form class="form-control" action="#" method="post">
-                    <label for="FormControlName" class="form-label ">Введите свое имя :</label>
-                    <input id="FormControlName" type="text" class="form-control" name="input_name"
-                           placeholder="Введите свое имя">
-                    <label for="FormControlPassword" class="form-label ">Введите свой пароль :</label>
-                    <input id="FormControlPassword" type="password" class="form-control" name="input_password"
-                           placeholder="Введите свой пароль">
-                    <input type="submit" class="bnt btn-outline-primary" name="input_submit" value="отправить">
+                <div class="text-center">
+                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                <form class="form text-center" action="">
+                    <div class="form-label-group">
+                    <label for="inputEmail" class="visually-hidden">Email address</label>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                    </div>
+                    <div class="form-label-group">
+                    <label for="inputPassword" class="visually-hidden">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
                 </form>
-            </div>
+                </div>
+<!--                <form class="form-control" action="#" method="post">-->
+<!--                    <label for="FormControlName" class="form-label ">Введите свое имя :</label>-->
+<!--                    <input id="FormControlName" type="text" class="form-control" name="input_name"-->
+<!--                           placeholder="Введите свое имя">-->
+<!--                    <label for="FormControlPassword" class="form-label ">Введите свой пароль :</label>-->
+<!--                    <input id="FormControlPassword" type="password" class="form-control" name="input_password"-->
+<!--                           placeholder="Введите свой пароль">-->
+<!--                    <input type="submit" class="bnt btn-outline-primary" name="input_submit" value="отправить">-->
+<!--                </form>-->
+<!--            </div>-->
         </div>
 <?php
 include "../blocks/footer.php";

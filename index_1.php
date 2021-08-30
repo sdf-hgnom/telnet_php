@@ -30,7 +30,6 @@ global $all_cameras;
             <p>
                 Copyright&copy;
             </p>
-
         </footer>
     </div>
     <hr>
