@@ -22,11 +22,12 @@ if (isset($_POST['input_submit'])) {
         $user = mysqli_fetch_assoc($check_user);
         if (password_verify($input_password, $user['password'])) {
             $_SESSION['user'] = [
-                'id' => $user['id'],
-                'name' => $user['name'],
-                'email' => $user['email'],
-                'status' => $user['status'],
-                'telephone' => $user['telephone'],
+                "id" => $user['id'],
+                "name" => $user['name'],
+                "email" => $user['email'],
+                "status" => $user['status'],
+                "phone" => $user['phone'],
+                "date_registation" => $user['date_registation']
             ];
 
         } else {

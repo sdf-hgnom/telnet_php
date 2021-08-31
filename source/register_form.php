@@ -13,7 +13,6 @@ print_r($_SESSION)
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="../cameras.js"></script>
-    <script src="../ymap.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <title><?= $header_page; ?></title>
@@ -35,7 +34,7 @@ print_r($_SESSION)
         <div class="row bg-white shadow-sm mb-3">
             <div class="form-label-group">
                 <label for="inputEmail">Введите email : </label>
-                <input type="email" id="inputEmal" class="form-control" placeholder="Введите email : "
+                <input type="email" id="inputEmail" class="form-control" placeholder="Введите email : "
                        name="input_email" required autofocus>
             </div>
         </div>
@@ -66,34 +65,25 @@ print_r($_SESSION)
             <button class="w-100 btn btn-lg btn-primary" type="submit" name="input_submit">Вход</button>
         </div>
         <div class="row">
-           <a href="../index_1.php"> <button class="w-100 btn btn-lg" type="button" name="input_submit">Отмена</a></button>
+           <a href="../index_1.php"> <button class="w-100 btn btn-lg" type="button" name="input_submit">Отмена</button>
 
         </div>
+        <?php
+        if (isset($_SESSION['message'])) {
+            if ($_SESSION['message']) {
+                echo '<span class="badge bg-danger">' . $_SESSION['message'] . '</span>';
+            }
+
+        }
+
+        ?>
+
     </form>
 </div>
 
-<?php
-if (isset($_SESSION['message_no_user'])) {
-    if ($_SESSION['message_no_user']) {
-        echo '<span class="badge bg-danger">' . $_SESSION['message_no_user'] . '</span>';
-        $location = "sign_in_form.php";
-    }
 
-}
-
-if (isset($_SESSION['message'])) {
-    if ($_SESSION['message']) {
-        echo '<span class="badge bg-danger">' . $_SESSION['message'] . '</span>';
-    }
-
-}
-
-?>
-
-</div>
 </body>
 <script src="/js/jquery-3.6.0.min.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
-<script src="/js/phpmail.js"></script>
 </html>
 
