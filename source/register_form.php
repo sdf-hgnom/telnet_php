@@ -19,62 +19,77 @@ print_r($_SESSION)
     <title><?= $header_page; ?></title>
 </head>
 <body>
-<div class="container-fluid d-flex h-100 justify-content-center align-items-center p-0">
+<div class="container-fluid d-flex h-100 justify-content-center">
     <form class="form" action="registration.php" method="post">
         <div class="row">
-                <h1 class="h3 fw-normal">Зарегистрируйтесь</h1>
+            <h1 class="h3 fw-normal text-center mb-3">Зарегистрируйтесь</h1>
         </div>
 
-<div class="form-label-group">
-            <div class="row mb-5 bg-white shadow-sm">
-                <label for="inputName" class="visually-hidden">Email address</label>
-                <input type="text" id="inputName" class="form-control-lg" placeholder="Введите имя : "
+        <div class="row  bg-white shadow-sm mb-3">
+            <div class="form-label-group ">
+                <label for="inputName">Введите имя :</label>
+                <input type="text" id="inputName" class="form-control" placeholder="Введите имя : "
                        name="input_name" required autofocus>
             </div>
-</div>
+        </div>
+        <div class="row bg-white shadow-sm mb-3">
+            <div class="form-label-group">
+                <label for="inputEmail">Введите email : </label>
+                <input type="email" id="inputEmal" class="form-control" placeholder="Введите email : "
+                       name="input_email" required autofocus>
+            </div>
+        </div>
+
+        <div class="row bg-white shadow-sm mb-3">
+            <div class="form-label-group">
+                <label for="inputPhone">Введите телефон : </label>
+                <input type="text" id="inputPhone" class="form-control" placeholder="Введите телефон : "
+                       name="input_phone" required autofocus>
+            </div>
+        </div>
+        <div class="row bg-white shadow-sm mb-3">
+            <div class="form-label-group">
+                <label for="inputPassword">Ведите пароль :</label>
+                <input type="text" id="inputPhone" class="form-control" placeholder="Ведите пароль : "
+                       name="input_password" required autofocus>
+            </div>
+        </div>
+        <div class="row bg-white shadow-sm mb-3">
+            <div class="form-label-group">
+                <label for="inputPasswors2">Ведите пароль повторно : </label>
+                <input type="text" id="inputPhone" class="form-control" placeholder="Ведите пароль повторно : "
+                       name="input_password2" required autofocus>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="w-100 btn btn-lg btn-primary" type="submit" name="input_submit">Вход</button>
+        </div>
+        <div class="row">
+           <a href="../index_1.php"> <button class="w-100 btn btn-lg" type="button" name="input_submit">Отмена</a></button>
+
+        </div>
     </form>
-<!--            <div class="row form-label-group  bg-white shadow-sm">-->
-<!--                <label for="inputEmail" class="visually-hidden">Email address</label>-->
-<!--                <input type="text" id="inputEmal" class="form-control" placeholder="Введите email : "-->
-<!--                       name="input_name" required autofocus>-->
-<!--            </div>-->
-<!--            <div class="row form-label-group  bg-white shadow-sm">-->
-<!--                <label for="inputPhone" class="visually-hidden">Email address</label>-->
-<!--                <input type="text" id="inputPhone" class="form-control" placeholder="Введите телефон : "-->
-<!--                       name="input_name" required autofocus>-->
-<!--            </div>-->
-<!--            <div class="row form-label-group  bg-white shadow-sm">-->
-<!--                <label for="inputPassword" class="visually-hidden">Пароль : </label>-->
-<!--                <input type="password" id="inputPassword" class="form-control" placeholder="Ведите пароль :"-->
-<!--                       name="input_password" required>-->
-<!--            </div>-->
-<!--            <div class="row form-label-group  bg-white shadow-sm">-->
-<!--                <label for="inputPassword2" class="visually-hidden">Пароль повторно: </label>-->
-<!--                <input type="password" id="inputPassword2" class="form-control" placeholder="Ведите пароль повторно : "-->
-<!--                       name="input_password2" required>-->
-<!--            </div>-->
-<!--            <button class="w-100 btn btn-lg btn-primary" type="submit" name="input_submit">Вход</button>-->
-<!--            <a href="../index_1.php"> Вход </a>-->
-<!--    </form>-->
-    <?php
-    if (isset($_SESSION['message_no_user'])) {
-        if ($_SESSION['message_no_user']) {
-            echo '<span class="badge bg-danger">' . $_SESSION['message_no_user'] . '</span>';
-            $location = "sign_in_form.php";
-        }
-
-    }
-
-    if (isset($_SESSION['message'])) {
-        if ($_SESSION['message']) {
-            echo '<span class="badge bg-danger">' . $_SESSION['message'] . '</span>';
-        }
-
-    }
-
-    ?>
-
 </div>
+
+<?php
+if (isset($_SESSION['message_no_user'])) {
+    if ($_SESSION['message_no_user']) {
+        echo '<span class="badge bg-danger">' . $_SESSION['message_no_user'] . '</span>';
+        $location = "sign_in_form.php";
+    }
+
+}
+
+if (isset($_SESSION['message'])) {
+    if ($_SESSION['message']) {
+        echo '<span class="badge bg-danger">' . $_SESSION['message'] . '</span>';
+    }
+
+}
+
+?>
+
 </div>
 </body>
 <script src="/js/jquery-3.6.0.min.js"></script>

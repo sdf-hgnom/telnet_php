@@ -1,47 +1,26 @@
 <?php
 include 'all_need.php';
 $header_page = "Регистрация";
+print_r($_POST);
+$input_name = $_POST['input_name'];
+$input_emal = $_POST['input_email'];
+$input_phone = $_POST['input_phone'];
+$input_password = $_POST['input_password'];
+$input_password2 = $_POST['input_password2'];
+global $db_client;
+
+if ($input_password != $input_password2){
+    $_SESSION['message'] = 'Введенные пароли не соврадают (повторите ввод) !! ';
+}
+
 ?>
+<pre>
+    <?
+    echo $input_name;
+    echo $input_emal;
+    echo $input_password;
+    echo $input_password2;
+    echo $input_phone;
+    ?>
+</pre>
 
-    <body>
-    <div class="container">
-        <div class="row">
-            <h1>Регистрация</h1>
-            <div class="col-12">
-                <form class="form-control" action="registration.php" method="post">
-                    <label for="FormControlMame" class="form-label ">Введите свое имя :</label>
-                    <input id="FormControlMame" type="text" class="form-control" name="input_name"
-                           placeholder="Введите свое имя">
-                    <label for="FormControlEmail" class="form-label">Введите свой email : </label>
-                    <input type="email" class="form-control" id="FormControlEmail" placeholder="name@example.com"
-                           name="input_email">
-                    <label for="FormControlTelephone" class="form-label">Введите свой телефон : </label>
-                    <input type="tel" class="form-control" name="input_telephone" id="FormControlTelephone"
-                           placeholder="номер телефона">
-                    <label for="FormControlPassword" class="form-label">Введите свой пароль : </label>
-                    <input type="password" autocomplete="on" class="form-control" name="input_password"
-                           id="FormControlPassword">
-                    <label for="FormControlPassword2" class="form-label">Введите свой пароль повторно : </label>
-                    <input type="password" autocomplete="on" class="form-control" name="input_password2"
-                           id="FormControlPassword2">
-                    <div class="form-control">
-                        <input type="submit" class="bnt btn-outline-primary" name="input_submit" value="Регимтрироваит">
-                        <a class="nav-link active" href="index_1.php">Отменить</a>
-                    </div>
-                    <div class="form-control">
-                        <?php
-                        if (isset($_SESSION['message'])) {
-                            echo '<span class="form-control"> ' . $_SESSION['message'] . ' </span>';
-
-                        }
-                        ?>
-<!--                        <a href="registration.php"></a>-->
-
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-<?php
-print_r($_SESSION);
