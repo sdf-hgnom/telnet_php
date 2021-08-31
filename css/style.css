@@ -30,8 +30,8 @@
     flex-shrink: 0;
 }
 .form {
-    max-width: 350px;
-    max-height: 300px;
+    width: 600px;
+    height: 600px;
     margin: 0 auto;
 }
 .video-container{

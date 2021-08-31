@@ -1,7 +1,6 @@
 <?php
-include '../source/all_need.php';
+include 'all_need.php';
 $header_page = "Регистрация";
-include "../blocks/headers_no_map.php";
 ?>
 
     <body>
@@ -9,7 +8,7 @@ include "../blocks/headers_no_map.php";
         <div class="row">
             <h1>Регистрация</h1>
             <div class="col-12">
-                <form class="form-control" action="signup.php" method="post">
+                <form class="form-control" action="registration.php" method="post">
                     <label for="FormControlMame" class="form-label ">Введите свое имя :</label>
                     <input id="FormControlMame" type="text" class="form-control" name="input_name"
                            placeholder="Введите свое имя">
@@ -27,17 +26,16 @@ include "../blocks/headers_no_map.php";
                            id="FormControlPassword2">
                     <div class="form-control">
                         <input type="submit" class="bnt btn-outline-primary" name="input_submit" value="Регимтрироваит">
-                        <a class="nav-link active" href="signin.php">Отменить</a>
+                        <a class="nav-link active" href="index_1.php">Отменить</a>
                     </div>
                     <div class="form-control">
                         <?php
                         if (isset($_SESSION['message'])) {
-                            echo '<div class="form-control"> ' . $_SESSION['message'] . ' </p>';
+                            echo '<span class="form-control"> ' . $_SESSION['message'] . ' </span>';
 
                         }
-                        unset($_SESSION['message']);
                         ?>
-                        <a href="registration.php"></a>
+<!--                        <a href="registration.php"></a>-->
 
                     </div>
                 </form>
@@ -46,5 +44,4 @@ include "../blocks/headers_no_map.php";
     </div>
 
 <?php
-include "../blocks/footer.php";
 print_r($_SESSION);

@@ -16,8 +16,7 @@ print_r($_SESSION)
     <script src="../ymap.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    <title><?php global $header_page;
-        echo $header_page ?></title>
+    <title><?= $header_page; ?></title>
 </head>
 <body>
 <div class="container-fluid d-flex h-100 justify-content-center align-items-center p-0">
@@ -33,10 +32,10 @@ print_r($_SESSION)
                     </div>
                     <div class="form-label-group">
                         <label for="inputPassword" class="visually-hidden">Password</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Ведить пароль"
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Ведите пароль"
                                name="input_password" required>
                     </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit" name="input_submit">Sign in</button>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit" name="input_submit">Вход</button>
                     <a href="../index_1.php"> Вход  </a>
                 </form>
                 <?php
