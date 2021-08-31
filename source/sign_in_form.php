@@ -42,21 +42,15 @@ print_r($_SESSION)
                 <?php
                 if (isset($_SESSION['message_no_user'])) {
                     if ($_SESSION['message_no_user']) {
-                        echo '<p>' . $_SESSION['message_no_user'] . '</p>>';
-
+                        echo '<span class="badge bg-danger">' . $_SESSION['message_no_user'] . '</span>';
                         $location = "sign_in_form.php";
-//                        header('Location:' . $location);
-//                        unset($_SESSION['message_no_user']);
                     }
 
                 }
 
                 if (isset($_SESSION['message'])) {
                     if ($_SESSION['message']) {
-                        echo '<p>' . $_SESSION['message'] . '</p>>';
-//                        unset($_SESSION['message'] );
-//                        $location = "sign_in_form.php";
-//                        header('Location:' . $location);
+                        echo '<span class="badge bg-danger">' . $_SESSION['message'] . '</span>';
                     }
 
                 }
