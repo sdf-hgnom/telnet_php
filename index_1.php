@@ -27,7 +27,7 @@ print_r($_SESSION);
 <body>
 <nav class="navbar navbar-expand-lg justify-content-around navbar-light bg-light">
     <div class="navbar-brand">
-        <img src="images/telnet_logo.png">
+        <img src="images/telnet_logo.png" alt="logo">
     </div>
     <span class=""> Камеры </span>
     <div class="d-none align-text-top d-lg-block">
@@ -60,19 +60,7 @@ print_r($_SESSION);
     </div>
 
 </nav>
-<!--    <div class="container-fluid">-->
-<!--        <div class="row">-->
-<!---->
-<!--            <a class="navbar-brand" href="#"> <img class="foto" src="images/telnet_logo.png" alt="foto"></a>-->
-<!--                <span class="h4"> Камеры Усть-Илимска</span>-->
-<!--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"-->
-<!--                        aria-expanded="false" aria-label="Toggle navigation">-->
-<!--                    <span class="navbar-toggler-icon"></span>-->
-<!--                </button>-->
-<!---->
-<!--        </div>-->
-    </div>
-</nav>
+
 <div class="container-fluid">
     <div class="row">
         <div id="map" class="my_map col-12">
