@@ -25,31 +25,52 @@ print_r($_SESSION);
         echo $header_page ?></title>
 </head>
 <body>
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid d-flex">
-        <a class="navbar-brand" href="#"> <img class="foto" src="images/telnet_logo.png" alt="foto"></a>
-        <div class="h4 "> Камеры Усть-Илимска </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".nav-my" aria-controls="nav-my"-->
-        <!--                aria-expanded="false" aria-label="Toggle navigation">-->
-        <!--            <span class="navbar-toggler-icon"></span>-->
-        <!--        </button>-->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav btn-group border">
-                <li class="nav-item">
-                    <a class="nav-link active " href="source/sign_in_form.php"> Вход </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active " href="source/register_form.php"> Регистрация </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="source/signout.php"> Выйти </a>
-                </li>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-lg justify-content-around navbar-light bg-light">
+    <div class="navbar-brand">
+        <img src="images/telnet_logo.png">
+    </div>
+    <span class=""> Камеры </span>
+    <div class="d-none align-text-top d-lg-block">
+        <ul class="navbar-nav btn-group border">
+            <li class="nav-item">
+                <a class="nav-link active " href="source/sign_in_form.php"> Вход </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active " href="source/register_form.php"> Регистрация </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="source/signout.php"> Выйти </a>
+            </li>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Переключатель навигации">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapsed" id="navbarNav">
+        <ul class="navbar-nav btn-group border">
+            <li class="nav-item">
+                <a class="nav-link active " href="source/sign_in_form.php"> Вход </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active " href="source/register_form.php"> Регистрация </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="source/signout.php"> Выйти </a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+<!--    <div class="container-fluid">-->
+<!--        <div class="row">-->
+<!---->
+<!--            <a class="navbar-brand" href="#"> <img class="foto" src="images/telnet_logo.png" alt="foto"></a>-->
+<!--                <span class="h4"> Камеры Усть-Илимска</span>-->
+<!--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"-->
+<!--                        aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                    <span class="navbar-toggler-icon"></span>-->
+<!--                </button>-->
+<!---->
+<!--        </div>-->
     </div>
 </nav>
 <div class="container-fluid">
