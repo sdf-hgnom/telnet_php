@@ -11,5 +11,4 @@ $db_client = mysqli_connect($db_host,$db_username,$db_password,$db_name);
 if(!$db_client){
     die('Error db connect !!');
 }
-global $all_cameras;
 global $db_client;
