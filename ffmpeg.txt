@@ -1,0 +1,19 @@
+https://www.gyan.dev/ffmpeg/builds/
+-filter_complex "[0:v][1:v]overlay"
+ffmpeg -i input.mp4 -i watermark.png -filter_complex "[1][0]scale2ref=w=oh*mdar:h=ih*0.1[logo][video];[video][logo]overlay=5:H-h-5" -c:a copy output.mp4
+
+ffmpeg -i 1627277293VCG202_1628935200_300.mp4 -i Python_icon.png -filter_complex "[1:v][0:v]scale2ref=iw*0.05:-1[logo1][base][base][logo1]overlay=0:0[v]"-map [v] -map 0:a -y -b:v 1600k -c:v libx264 -profile high -level 4.1 test.mp4
+
+@echo off
+   SetLocal EnableExtensions EnableDelayedExpansion
+
+   for %%a in ("*.mp4") do (
+      For /F "usebackq" %%I In (`ffprobe -v error -show_entries stream"="width -of default"="noprint_wrappers"="1:nokey"="1 "%%~a"`) Do (
+
+      Set V=%%~I
+      ffmpeg -i "%%a" -i logo.png -b:v 1M -filter_complex "[1:v]scale=(SCALE_FACTOR*!V!):-1 [wm]; [0:v][wm] overlay=x=(main_w-overlay_w):y=(main_h-overlay_h)" -y -v 2 "new\%%~na.mp4"
+)
+
+ffmpeg -i 1627277293VCG202_1628935200_300.mp4  -i Python_icon.png -b:v 1M -filter_complex "[1:v]scale=V*10/:-1 [wm];[0:v][wm] overlay=x=(main_w-overlay_w):y=(main_h-overlay_h)"
+Python_icon.png 1627277293VCG202_1628935200_300.mp4 
+ffmpeg –i 1627277293VCG202_1628935200_300.mp4 -i Python_icon.png -filter_complex "[0:v][1:v]"
