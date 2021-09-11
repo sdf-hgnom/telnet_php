@@ -12,6 +12,7 @@
   "require": {
     "guzzlehttp/guzzle": "^7.3",
     "ext-mysqli": "*",
-    "ext-json": "*"
+    "ext-json": "*",
+    "php-ffmpeg/php-ffmpeg": "^0.18.0"
   }
 }
